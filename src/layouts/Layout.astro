@@ -24,6 +24,50 @@ const {title} = Astro.props;
 			<a href="educacion">Educación</a>
 			<a href="contacto">Contactos</a>
 		</header>
-		<slot />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
+
+<style is:global>
+	:root{
+		--main-color:#F8FAFC;
+		--color-secundario:#D9EAFD;
+		--color-terciario:#BCCCDC;
+		--color--cuaternario:#9AA6B2;
+	}
+
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body{
+		font-family: 'Roboto', sans-serif;
+		background-color: var(--main-color);;
+	}
+
+	header{
+		background-color: var(--color-secundario);
+		padding: 1rem;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	header a{
+		text-decoration: none;
+		color: var(--color--cuaternario);
+	}
+
+	main{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 90vh;
+		flex-direction: column;
+		gap: 1.5rem;
+		color: var(--color-terciario);
+	}
+</style>
