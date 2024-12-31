@@ -1,7 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProyectoCarta from "../components/proyectoCarta.astro";
 ---
 
 <Layout title="Proyectos">
     <h1>Proyectos</h1>
+    <section>
+        <ProyectoCarta 
+        titulo="to-do list" 
+        descripcion={`Este es un proyecto de backend para una aplicación de To-Do List, desarrollado con Spring Boot.
+            El sistema incluye funcionalidades para gestionar tareas, usuarios y etiquetas, y permite la autenticación
+            mediante JWT tokens.`}
+        url="/proyecto/to-do-list"
+        />
+    </section>
 </Layout>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px; 
+        padding-bottom: 8rem;
+        max-height: 500px;
+        overflow-y: auto; 
+    }
+</style>

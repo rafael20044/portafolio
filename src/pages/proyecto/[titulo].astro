@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import {getProyectoPaths} from "../../types/rutas";
+
+export const getStaticPaths = getProyectoPaths;
+
+const {titulo} = Astro.params;
+const {descripcion, tecnologias, urlGithub, urlImagenes, urlVideos} = Astro.props
+---
+
+<Layout title={titulo}>
+    <a href="/proyectos">regresar</a>
+    <section>
+        <h1>{titulo}</h1>
+        <p class="descripcion">{descripcion}</p>
+        <ul>
+            {tecnologias.map(tecnologia => (<li>{tecnologia}</li>))}
+        </ul>
+        <p>Video</p>
+        <iframe src="" frameborder="0">Aca muy pronto un video</iframe>
+        <p>Estructura del proyecto</p>
+        <img src={urlImagenes[0]} alt="estructura del proyecto">
+        <a href={urlGithub} target="_blank"><img src="/img/github.png" alt="logo de github">
+            repositorio en GitHub
+        </a>
+    </section>
+</Layout>
+
+<style>
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 8rem;
+        max-height: 500px;
+        overflow-y: auto; 
+    }
+
+    section .descripcion {
+        text-align: center;
+    }
+</style>
