@@ -9,8 +9,8 @@ export const getProyectoPaths = () => {
                 mediante JWT tokens.`,
             tecnologias: ["Java", "Spring Boot", "JWT","PostgreSQL"],
             urlGithub: "https://github.com/rafael20044/todo",
-            urlImagenes: ["/img/to-do/estructura.png"],
-            urlVideos:""
+            urlImagenes: ["/img/to-do/filtro.png", "/img/to-do/login.png"],
+            urlVideos:"https://www.youtube.com/embed/asyM77D0PqE"
         }
     }
 ];

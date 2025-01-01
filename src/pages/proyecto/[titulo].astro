@@ -17,10 +17,12 @@ const {descripcion, tecnologias, urlGithub, urlImagenes, urlVideos} = Astro.prop
             {tecnologias.map(tecnologia => (<li>{tecnologia}</li>))}
         </ul>
         <p>Video</p>
-        <iframe src="" frameborder="0">Aca muy pronto un video</iframe>
-        <p>Estructura del proyecto</p>
-        <img src={urlImagenes[0]} alt="estructura del proyecto">
-        <a href={urlGithub} target="_blank"><img src="/img/github.png" alt="logo de github">
+        <iframe width="100%" height="500" src={urlVideos} allowfullscreen></iframe>
+        <p>Capturas del proyecto</p>
+        <div class="imagenes">
+            {urlImagenes.map(url => (<img src={url} alt="captura de pantalla del proyecto"/>))}
+        </div>
+        <a class="link" href={urlGithub} target="_blank"><img src="/img/github.png" alt="logo de github">
             repositorio en GitHub
         </a>
     </section>
@@ -39,5 +41,31 @@ const {descripcion, tecnologias, urlGithub, urlImagenes, urlVideos} = Astro.prop
 
     section .descripcion {
         text-align: center;
+    }
+
+    section iframe {
+    width: 50%;
+    aspect-ratio: 16 / 9; /* Esto mantiene la proporción de video 16:9 */
+    height: auto;
+}
+
+
+    section .imagenes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    section .imagenes img{  
+        width: 35rem;
+        height: auto;
+        max-width: 1200px;
+        border-radius: 8px;
+    }
+
+    section .link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
     }
 </style>
