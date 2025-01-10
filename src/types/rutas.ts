@@ -12,6 +12,18 @@ export const getProyectoPaths = () => {
             urlImagenes: ["/img/to-do/filtro.png", "/img/to-do/login.png"],
             urlVideos:"https://www.youtube.com/embed/asyM77D0PqE"
         }
+    },
+        {
+        params: { titulo: "finanzas-personales" },
+        props: {
+            descripcion: `Este es un proyecto de backend para una aplicación de finanzas personales, desarrollado
+            con Spring Boot. El sistema incluye funcionalidades para gestionar usuarios, cuentas y transacciones ,
+            y permite la autenticación mediante JWT tokens.`,
+            tecnologias: ["Java", "Spring Boot", "JWT","MySQL"],
+            urlGithub: "https://github.com/rafael20044/api-finanzas",
+            urlImagenes: null,
+            urlVideos:null
+        }
     }
 ];
 };

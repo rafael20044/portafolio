@@ -13,15 +13,24 @@ const {descripcion, tecnologias, urlGithub, urlImagenes, urlVideos} = Astro.prop
     <section>
         <h1>{titulo}</h1>
         <p class="descripcion">{descripcion}</p>
+        <p>Tecnologias usadas</p>
         <ul>
             {tecnologias.map(tecnologia => (<li>{tecnologia}</li>))}
         </ul>
-        <p>Video</p>
-        <iframe width="100%" height="500" src={urlVideos} allowfullscreen></iframe>
-        <p>Capturas del proyecto</p>
-        <div class="imagenes">
-            {urlImagenes.map(url => (<img src={url} alt="captura de pantalla del proyecto"/>))}
-        </div>
+        {
+            (urlVideos != null) ? (
+                <p>Video</p>
+                <iframe width="100%" height="500" src={urlVideos} allowfullscreen></iframe>
+            ):(<p></p>)
+        }
+        {
+            (urlImagenes != null) ? (
+                <p>Capturas del proyecto</p>
+                    <div class="imagenes">
+                        {urlImagenes.map(url => (<img src={url} alt="captura de pantalla del proyecto"/>))}
+                    </div>
+            ):(<p></p>)
+        }
         <a class="link" href={urlGithub} target="_blank"><img src="/img/github.png" alt="logo de github">
             repositorio en GitHub
         </a>
